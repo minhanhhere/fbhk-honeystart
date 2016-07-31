@@ -1,0 +1,41 @@
+<div class="container-fluid w1280 mobile-full-width">
+    <div class="row-fluid text-center">
+        <div class="hidden-xs animated wow zoomIn">
+            <div class="col-sm-6 no-padding-right text-right">
+                <img style="height: 27px; margin-top: -5px;" src="images/logo.svg"/>
+            </div>
+            <div class="col-sm-6 no-padding-left text-left">
+                <span style="font-size: 20px;"><strong>&nbsp;Who are we</strong></span>
+            </div>
+        </div>
+        <div class="visible-xs animated wow zoomIn">
+            <div class="col-sm-6 text-center">
+                <img style="height: 27px; margin-bottom: 5px; margin-left: 10px;" src="images/logo.svg"/>
+            </div>
+            <div class="col-sm-6 text-center">
+                <span style="font-size: 20px;"><strong>&nbsp;Who are we</strong></span>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="col-md-8 col-md-offset-2 text-center animated wow fadeInDownSmall">
+                <blockquote>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Hoc non est positum in nostra actione. Tamen a proposito, inquam, aberramus.</p>
+                </blockquote>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 wow animated fadeInDownSmall" ng-repeat="feature in vm.features" data-wow-delay="{{0.2 + 0.1 * ($index)}}s">
+            <div class="card-borderless">
+                <div class="card-header">
+                    <span class="feature-center-icon"><i class="fa {{feature.icon}}"></i></span>
+                </div>
+                <div class="card-body">
+                    <h4 class="text-uppercase">{{feature.title}}</h4>
+                    <p>{{feature.description}}</p>
+                </div>
+                <!--<div class="card-footer padding-bottom-lg">-->
+                <!--<a class="text-uppercase" href="#">{{'learnmore' | translate}}</a>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+</div>

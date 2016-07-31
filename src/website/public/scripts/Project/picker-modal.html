@@ -1,0 +1,61 @@
+<div class="modal-header">
+    <i class="btn-fa fa fa-close fa-lg2 pull-right" aria-hidden="true" ng-click=vm.dismiss()></i>
+    <img class="modal-logo" src="/images/logo.svg"/>
+</div>
+<div class="modal-body">
+    <!--<div class="padding-bottom-sm"><strong>Choose your desire memorial gifts</strong></div>-->
+    <!--<div class="row">-->
+        <!--<div class="project-package col-md-4 col-sm-6" ng-repeat="package in vm.packages">-->
+            <!--<div class="relative">-->
+                <!--<div class="package-image-wrapper" ng-if="package.photo && package.photo.length > 0">-->
+                    <!--<img class="img-responsive-full-width" ng-src="{{package.photo}}">-->
+                <!--</div>-->
+                <!--<div class="package-name">{{package.name}}</div>-->
+                <!--<div class="package-desc">{{package.description}}</div>-->
+                <!--<a class="div-link" href="/payment/new/{{vm.projectId}}?package_id={{package.id}}"></a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="padding-bottom-sm"><strong>Choose your desire extra bonus</strong></div>
+    <div class="row">
+        <div class="project-package col-md-4 col-sm-6">
+            <div class="relative">
+                <div class="package-image-wrapper">
+                    <img class="img-responsive-full-width" src="/images/project/lucky.jpg">
+                </div>
+                <div class="package-name">Lucky Gift</div>
+                <div class="package-desc">Special Thank-you gift from wedding couple</div>
+                <a class="div-link" ng-class="{'check': vm.check1}" ng-click="vm.check1=!vm.check1"></a>
+            </div>
+        </div>
+        <div class="project-package col-md-4 col-sm-6">
+            <div class="relative">
+                <div class="package-image-wrapper">
+                    <img class="img-responsive-full-width" src="/images/project/newsletter.png">
+                </div>
+                <div class="package-name">Monthly Newsletters</div>
+                <div class="package-desc">Wedding Service Newsletter & Special Offer</div>
+                <a class="div-link" ng-class="{'check': vm.check2}" ng-click="vm.check2=!vm.check2"></a>
+            </div>
+        </div>
+        <div class="project-package col-md-4 col-sm-6">
+            <div class="relative">
+                <div class="package-image-wrapper">
+                    <img class="img-responsive-full-width" src="/images/project/checklist.jpg">
+                </div>
+                <div class="package-name">Wedding Experience</div>
+                <div class="package-desc">Preparation checklist, cost & services review from this couple</div>
+                <a class="div-link" ng-class="{'check': vm.check3}" ng-click="vm.check3=!vm.check3"></a>
+            </div>
+        </div>
+    </div>
+    <div class="row padding-top-sm">
+        <div class="col-xs-7">
+        </div>
+        <div class="col-xs-5 no-padding-left">
+            <button class="btn btn-primary btn-block ladda-button" ng-click="vm.continue()">
+                <span class="ladda-label">CONTINUE</span>
+            </button>
+        </div>
+    </div>
+</div>

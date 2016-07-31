@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    @{meta}
+    <meta property="fb:app_id" content="1094350793977634"/>
+    <meta property="fb:pages" content="228588927536182"/>
+    <meta property="og:type" content="article"/>
+    @{section('facebook_meta')}
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=10"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1"/>
+    <meta name="robots" content="all,follow"/>
+
+    @{head}
+    @{import('favicon.ico')}
+    @{import('/styles/vendor.css', '/styles/main.css')}
+    @{import('/scripts/vendor.js', '/scripts/main.js')}
+
+    <script>
+        new WOW().init();
+    </script>
+
+</head>
+
+<body ng-app="HoneyStart">
+
+<div id="fb-root"></div>
+<script>
+
+    // This is called with the results from from FB.getLoginStatus().
+    function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+        // Full docs on the response object can be found in the documentation
+        // for FB.getLoginStatus().
+        if (response.status === 'connected') {
+            // Logged into your app and Facebook.
+            angular.element("#topnav").scope().vm.autoLoginFB();
+        } else if (response.status === 'not_authorized') {
+            // The person is logged into Facebook, but not your app.
+        } else {
+            // The person is not logged into Facebook, so we're not sure if
+            // they are logged into this app or not.
+        }
+    }
+
+    // This function is called when someone finishes with the Login
+    // Button.  See the onlogin handler attached to it in the sample
+    // code below.
+    function checkLoginState() {
+        FB.getLoginStatus(function (response) {
+            statusChangeCallback(response);
+        });
+    }
+
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '1094350793977634',
+            cookie: true,  // enable cookies to allow the server to access the session
+            xfbml: true,  // parse social plugins on this page
+            version : 'v2.7'
+        });
+
+        // Now that we've initialized the JavaScript SDK, we call
+        // FB.getLoginStatus().  This function gets the state of the
+        // person visiting this page and can return one of three states to
+        // the callback you provide.  They can be:
+        //
+        // 1. Logged into your app ('connected')
+        // 2. Logged into Facebook, but not your app ('not_authorized')
+        // 3. Not logged into Facebook and can't tell if they are logged into
+        //    your app or not.
+        //
+        // These three cases are handled in the callback function.
+        FB.getLoginStatus(function (response) {
+            statusChangeCallback(response);
+        });
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div data-component="cookie" class="hidden">This site uses cookies for visitor statistics. By continuing to browse the site you are agreeing to our use of cookies.</div>
+
+<toaster-container toaster-options="{'time-out': 8000, 'close-button': true, 'limit': 5, 'tap-to-dismiss': false}"></toaster-container>
+
+<div class="outer-wrapper">
+
+    @{view('topnav')}
+
+    <section id="body-container" ng-controller="@{place('controller')}">@{body}</section>
+
+    @{view('footer')}
+
+</div>
+
+<script>
+    /*
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-XXXXX-X');
+     ga('send', 'pageview'); */
+</script>
+
+<!--[if lt IE 9]>
+@{import('/scripts/oldieshim.js')}
+<![endif]-->
+</body>
+
+</html>

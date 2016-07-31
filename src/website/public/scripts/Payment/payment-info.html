@@ -1,0 +1,80 @@
+<div class="padding-bottom-sm">
+    <strong class="text-muted">Personal information:</strong>
+    <span ng-if="!vm.auth.getUser()">
+        <a>GUEST</a> or
+        <a ng-click="vm.showAuthModal(false)">LOGIN</a> | <a ng-click="vm.showAuthModal(true)">REGISTER</a>
+    </span>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <input type="text" class="form-control" required ng-model="vm.data.owner.firstName">
+            <label>First Name</label>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <input type="text" class="form-control" required ng-model="vm.data.owner.lastName">
+            <label>Last Name</label>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <input type="email" class="form-control" required ng-model="vm.data.owner.email">
+            <label>Email</label>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <input type="text" class="form-control" required ng-model="vm.data.owner.phone">
+            <label>Phone</label>
+        </div>
+    </div>
+</div>
+<div class="padding-top-lg padding-bottom-sm">
+    <strong class="text-muted">Address</strong>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <input type="text" class="form-control" required ng-model="vm.data.address.street">
+            <label>Address 1</label>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <input type="text" class="form-control" required ng-model="vm.data.address.block">
+            <label>Address 2</label>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <input type="text" class="form-control" required ng-model="vm.data.address.country">
+            <label>Country</label>
+        </div>
+    </div>
+</div>
+<div class="padding-top-lg padding-bottom-sm">
+    <strong class="text-muted">Type of contribution</strong>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="radio" ng-class="{'bg-info': vm.data.contribution.type=='full'}">
+            <label>
+                <input type="radio" ng-model="vm.data.contribution.type" value="full"/>Show name
+            </label>
+        </div>
+        <div class="radio" ng-class="{'bg-info': vm.data.contribution.type=='anonymous'}">
+            <label>
+                <input type="radio" ng-model="vm.data.contribution.type" value="anonymous"/>Anonymous
+            </label>
+        </div>
+        <div class="radio" ng-class="{'bg-info': vm.data.contribution.type=='other'}">
+            <label ng-click="vm.onOtherContributionTypeClick()">
+                <input type="radio" ng-model="vm.data.contribution.type" value="other"/>
+                <input type="text" id="txtContributionCustomName" ng-model="vm.data.contribution.customName" class="form-control" required placeholder="Other name">
+            </label>
+        </div>
+    </div>
+</div>
+<div class="padding-bottom-sm"></div>

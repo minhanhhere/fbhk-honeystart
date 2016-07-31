@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "dependencies": {
+    "less": "^2.7.1",
+    "mongodb": "^2.1.18",
+    "total.js": "^2.0.0",
+    "uglify-js": "^2.7.0"
+  }
+}

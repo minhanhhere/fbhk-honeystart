@@ -1,0 +1,55 @@
+<div class="modal-header">
+    <i class="btn-fa fa fa-close fa-lg2 pull-right" aria-hidden="true" ng-click=vm.dismiss()></i>
+    <img class="modal-logo" src="/images/logo.svg"/>
+</div>
+<div class="modal-body">
+    <!--<div class="padding-bottom-normal"><strong>Login</strong></div>-->
+    <div class="row padding-top-sm">
+        <div class="col-md-12">
+            <form role="form">
+                <div class="form-content">
+                    <div class="form-group" ng-if="vm.forRegister">
+                        <input type="text" ng-model="vm.firstName" class="form-control" placeholder="First Name" sfocus required>
+                    </div>
+                    <div class="form-group" ng-if="vm.forRegister">
+                        <input type="text" ng-model="vm.lastName" class="form-control" placeholder="Last Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" ng-model="vm.email" class="form-control" placeholder="Email" sfocus required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" ng-model="vm.password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <span ng-if="vm.error != ''" class="help-block text-danger padding-top-sm">{{vm.error}}</span>
+                </div>
+                <!--<a ui-sref="signup"><button type="button" class="btn btn-white btn-outline btn-lg btn-rounded">{{ 'registerhere' | translate }}</button></a>&nbsp;-->
+                <!--<button type="submit" ng-click="submit()" class="btn btn-white btn-outline btn-lg btn-rounded progress-login" progress-button="authenticate()">{{ 'login' | translate }}</button>-->
+            </form>
+        </div>
+    </div>
+    <div class="row checkbox" ng-if="!vm.forRegister">
+        <div class="col-xs-6 no-padding-right">
+            <label><input type="checkbox"> Remember me</label>
+        </div>
+        <div class="col-xs-6 no-padding-left text-right">
+            <a>Forgot password?</a>
+        </div>
+    </div>
+    <div class="row padding-top-sm">
+        <div class="col-xs-7">
+            <a class="btn btn-facebook btn-block" ng-click="vm.loginFB()"><i class="fa fa-facebook-f fa-lg"></i>&nbsp;FACEBOOK LOGIN</a>
+        </div>
+        <div class="col-xs-5 no-padding-left">
+            <button class="btn btn-primary btn-block ladda-button" ladda-button="vm.loading" data-style="zoom-in" ng-if="!vm.forRegister" ng-click="vm.login()">
+                <span class="ladda-label">LOGIN</span>
+            </button>
+            <button class="btn btn-primary btn-block ladda-button" ladda-button="vm.loading" data-style="zoom-in" ng-if="vm.forRegister" ng-click="vm.register()">
+                <span class="ladda-label">REGISTER</span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="modal-footer text-right">
+    <div ng-if="!vm.forRegister">Not a member? <a ng-click="vm.toggleRegister(true)">Register now</a></div>
+    <div ng-if="vm.forRegister">Already member? <a ng-click="vm.toggleRegister(false)">Login</a></div>
+</div>

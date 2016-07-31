@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <div class="row-full-width">
+        <div class="project-package col-md-4 col-sm-6" ng-repeat="package in vm.project.packages">
+            <div class="package-image-wrapper" ng-if="package.photo && package.photo.length > 0">
+                <img class="img-responsive-full-width" ng-src="{{package.photo}}">
+            </div>
+            <div class="package-name">{{package.name}}</div>
+            <div class="package-desc">{{package.description}}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+@{title('Payment - ' + model.project.name + ' - Funding your Wedding - Improve wedding experience with friends')}
+@{place('controller', 'PaymentCtrl as vm')}
+
+<script>
+    angular.module('app.payment').factory('$injectedModel', function () {
+        return @{json(model)};
+    });
+</script>
+
+<div class="conter-wrapper home-container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="container-fluid w1280 mobile-full-width">
+                <div class="row-fluid padding-top-lg">
+                    <div class="col-md-12">
+                        <h4 style="margin-bottom: 6px;">Your are contributing for {{vm.getGroomName()}} - {{vm.getBrideName()}}</h4>
+                        <h2 class="no-padding text-extra-strong">{{vm.data.project.name}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row padding-top-lg">
+            <div class="container-fluid w1280 mobile-full-width">
+                <div class="row-fluid">
+                    <div class="col-sm-7 col-md-7 col-lg-6 payment-info" ng-include="vm.template.info"></div>
+                    <div class="col-lg-2 visible-lg"></div>
+                    <div class="col-sm-5 col-md-5 col-lg-4 payment-invoice" ng-include="vm.template.invoice"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

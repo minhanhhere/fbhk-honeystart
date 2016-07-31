@@ -1,0 +1,53 @@
+<div class="panel panel-primary2">
+    <div class="panel-body">
+        <div class="payment-header">
+            <strong class="text-muted">Chosen gift</strong>
+        </div>
+        <div>
+            <div class="pull-right">
+                <a href="/project/id">Edit</a>
+            </div>
+            <div class="text-info">1x {{vm.data.package.name}}</div>
+        </div>
+        <div class="payment-header">
+            <strong class="text-muted">Contribution Amount</strong>
+        </div>
+        <div>
+            <span class="btn btn-success btn-outline btn-amount"
+                  ng-click="vm.setAmount(amount.key)"
+                  ng-repeat="amount in vm.amounts"
+                  ng-model="vm.data.contribution.amount"
+                  uib-btn-radio="{{amount.value}}">
+                {{amount.key == 'OTHER' ? 'OTHER' : amount.value.format()}}
+            </span>
+        </div>
+        <div ng-if="vm.showCustom" class="payment-header form-inline">
+            <div class="form-group">
+                <label class="sr-only">Amount</label>
+                <input type="number" sfocus class="form-control" placeholder="Amount" ng-model="vm.data.contribution.amount">
+            </div>
+            <button type="button" ng-click="vm.setCustomAmount()" class="btn btn-sm btn-primary">SUBMIT</button>
+        </div>
+    </div>
+    <div class="panel-footer" style="background-color: #ECEFF1;">
+        <div class="payment-header">
+            <strong class="text-muted">Invoice</strong>
+        </div>
+        <div>
+            <div class="pull-right">{{vm.data.contribution.amount.format()}} VND</div>
+            <div>Contribution for {{vm.data.project.name}}</div>
+        </div>
+        <hr/>
+        <div class="payment-header larger text-extra-strong">
+            <div class="pull-right">{{vm.data.contribution.amount.format()}} VND</div>
+            <div>Total</div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="payment-header text-lighter-less">
+            <small>By clicking 'Submit Payment', you acknowledge you are contributing to a work-in-progress and not making a direct purchase. Perks are managed by campaigners and cannot be guaranteed by Indiegogo. You also acknowledge and agree to our <a>Terms of Use</a>.</small>
+        </div>
+        <div class="payment-header">
+            <button class="btn btn-block btn-lg btn-primary" ng-click="vm.prepareTransaction()">PROCESS TO PAYMENT</button>
+        </div>
+    </div>
+</div>

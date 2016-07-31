@@ -1,0 +1,20 @@
+<div class="panel panel-primary2 project-package" ng-repeat="package in vm.project.packages">
+    <div class="panel-heading text-center text-uppercase" ng-if="package.feature">Feature</div>
+    <div class="package-image-wrapper" ng-if="package.photo && package.photo.length > 0">
+        <img class="img-responsive-full-width" ng-src="{{package.photo}}">
+    </div>
+    <div class="panel-body">
+        <div class="package-price"><strong>{{vm.project.currencySymbol + package.price}}</strong>&nbsp;<small>{{vm.project.currency}} <span ng-if="package.shippingIncluded">+ Giao hàng</span></small></div>
+        <div class="package-name"><strong>{{package.name}}</strong></div>
+        <div class="package-desc">{{package.description}}</div>
+        <div class="package-addon">
+            <div ng-if="package.limit > 0">64 out of {{package.limit}} claimed</div>
+            <div ng-if="package.limit <= 0">104 claimed</div>
+            <div ng-if="package.shippingCountries.length == 1 && package.shippingCountries[0] == 'Worldwide'">Ships Worldwide</div>
+            <div ng-if="package.shippingCountries.length > 0 && package.shippingCountries[0] != 'Worldwide'">Ships to: {{package.shippingCountries.join(', ')}}</div>
+        </div>
+    </div>
+    <div class="panel-footer text-center text-uppercase">
+        <strong class="text-muted">ESTIMATED {{vm.formatEstimation(package.timestampEstimate)}}</strong>
+    </div>
+</div>

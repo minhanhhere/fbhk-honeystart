@@ -1,0 +1,154 @@
+{
+	"ImportPath": "gitlab.com/hs-api-go",
+	"GoVersion": "go1.6",
+	"GodepVersion": "v74",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/ahmetalpbalkan/go-linq",
+			"Comment": "v0.9-rc5-19-g32a9c2b",
+			"Rev": "32a9c2bd73213b024e8bd5a687927eaf9bdfe0b9"
+		},
+		{
+			"ImportPath": "github.com/dgrijalva/jwt-go",
+			"Comment": "v3.0.0-2-gf077707",
+			"Rev": "f0777076321ab64f6efc15a82d9d23b98539b943"
+		},
+		{
+			"ImportPath": "github.com/klauspost/compress/flate",
+			"Comment": "v1.0-12-g14eb9c4",
+			"Rev": "14eb9c4951195779ecfbec34431a976de7335b0a"
+		},
+		{
+			"ImportPath": "github.com/klauspost/compress/gzip",
+			"Comment": "v1.0-12-g14eb9c4",
+			"Rev": "14eb9c4951195779ecfbec34431a976de7335b0a"
+		},
+		{
+			"ImportPath": "github.com/klauspost/compress/zlib",
+			"Comment": "v1.0-12-g14eb9c4",
+			"Rev": "14eb9c4951195779ecfbec34431a976de7335b0a"
+		},
+		{
+			"ImportPath": "github.com/klauspost/cpuid",
+			"Comment": "v1.0",
+			"Rev": "09cded8978dc9e80714c4d85b0322337b0a1e5e0"
+		},
+		{
+			"ImportPath": "github.com/klauspost/crc32",
+			"Comment": "v1.0",
+			"Rev": "19b0b332c9e4516a6370a0456e6182c3b5036720"
+		},
+		{
+			"ImportPath": "github.com/labstack/echo",
+			"Comment": "v2.0.2-4-g08e08a0",
+			"Rev": "08e08a00eaae3f081530dc25686e2febfe408952"
+		},
+		{
+			"ImportPath": "github.com/labstack/echo/engine",
+			"Comment": "v2.0.2-4-g08e08a0",
+			"Rev": "08e08a00eaae3f081530dc25686e2febfe408952"
+		},
+		{
+			"ImportPath": "github.com/labstack/echo/engine/fasthttp",
+			"Comment": "v2.0.2-4-g08e08a0",
+			"Rev": "08e08a00eaae3f081530dc25686e2febfe408952"
+		},
+		{
+			"ImportPath": "github.com/labstack/echo/log",
+			"Comment": "v2.0.2-4-g08e08a0",
+			"Rev": "08e08a00eaae3f081530dc25686e2febfe408952"
+		},
+		{
+			"ImportPath": "github.com/labstack/echo/middleware",
+			"Comment": "v2.0.2-4-g08e08a0",
+			"Rev": "08e08a00eaae3f081530dc25686e2febfe408952"
+		},
+		{
+			"ImportPath": "github.com/labstack/gommon/bytes",
+			"Comment": "v0.0.3-54-g722aa12",
+			"Rev": "722aa12d41c236ce78ff48eac1cafe0107ecdc9d"
+		},
+		{
+			"ImportPath": "github.com/labstack/gommon/color",
+			"Comment": "v0.0.3-54-g722aa12",
+			"Rev": "722aa12d41c236ce78ff48eac1cafe0107ecdc9d"
+		},
+		{
+			"ImportPath": "github.com/labstack/gommon/log",
+			"Comment": "v0.0.3-54-g722aa12",
+			"Rev": "722aa12d41c236ce78ff48eac1cafe0107ecdc9d"
+		},
+		{
+			"ImportPath": "github.com/mattn/go-colorable",
+			"Comment": "v0.0.5",
+			"Rev": "9056b7a9f2d1f2d96498d6d146acd1f9d5ed3d59"
+		},
+		{
+			"ImportPath": "github.com/mattn/go-isatty",
+			"Rev": "56b76bdf51f7708750eac80fa38b952bb9f32639"
+		},
+		{
+			"ImportPath": "github.com/maxwellhealth/bongo",
+			"Comment": "v0.10.4",
+			"Rev": "58e3a1fbb5ea15dde8675b60becb2a9950e70164"
+		},
+		{
+			"ImportPath": "github.com/maxwellhealth/go-dotaccess",
+			"Rev": "ae070a2d2a38fd7233e255ded21fb26fe36b4796"
+		},
+		{
+			"ImportPath": "github.com/oleiade/reflections",
+			"Comment": "0.1.2-2-g632977f",
+			"Rev": "632977f98cd34d217c4b57d0840ec188b3d3dcaf"
+		},
+		{
+			"ImportPath": "github.com/valyala/bytebufferpool",
+			"Rev": "a3c01bbe26fff36275541489fd39848d70694b94"
+		},
+		{
+			"ImportPath": "github.com/valyala/fasthttp",
+			"Comment": "v20160617-11-g778f83e",
+			"Rev": "778f83ed894a22f220baa149ea1a1defd0245f3c"
+		},
+		{
+			"ImportPath": "github.com/valyala/fasthttp/fasthttputil",
+			"Comment": "v20160617-11-g778f83e",
+			"Rev": "778f83ed894a22f220baa149ea1a1defd0245f3c"
+		},
+		{
+			"ImportPath": "github.com/valyala/fasttemplate",
+			"Rev": "3b874956e03f1636d171bda64b130f9135f42cff"
+		},
+		{
+			"ImportPath": "golang.org/x/net/context",
+			"Rev": "e445b19913b9d40fdbdfe19ac5e3d314aafd6f63"
+		},
+		{
+			"ImportPath": "golang.org/x/sys/unix",
+			"Rev": "62bee037599929a6e9146f29d10dd5208c43507d"
+		},
+		{
+			"ImportPath": "gopkg.in/mgo.v2",
+			"Comment": "r2016.02.04-3-g29cc868",
+			"Rev": "29cc868a5ca65f401ff318143f9408d02f4799cc"
+		},
+		{
+			"ImportPath": "gopkg.in/mgo.v2/bson",
+			"Comment": "r2016.02.04-3-g29cc868",
+			"Rev": "29cc868a5ca65f401ff318143f9408d02f4799cc"
+		},
+		{
+			"ImportPath": "gopkg.in/mgo.v2/internal/sasl",
+			"Comment": "r2016.02.04-3-g29cc868",
+			"Rev": "29cc868a5ca65f401ff318143f9408d02f4799cc"
+		},
+		{
+			"ImportPath": "gopkg.in/mgo.v2/internal/scram",
+			"Comment": "r2016.02.04-3-g29cc868",
+			"Rev": "29cc868a5ca65f401ff318143f9408d02f4799cc"
+		}
+	]
+}

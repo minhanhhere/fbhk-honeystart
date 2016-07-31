@@ -1,0 +1,261 @@
+@{title('New Couple Page - Funding your Wedding - Improve wedding experience with friends')}
+@{place('controller', 'ProjectNewCtrl as vm')}
+
+<div class="conter-wrapper home-container">
+    <div class="container-fluid">
+
+        <div class="row padding-bottom-lg" ng-if="!vm.selectedPackage">
+            <div class="container-fluid w1280 mobile-full-width">
+                <div class="row-fluid">
+                    <div class="col-md-12 text-center">
+                        <h1 class="text-thin padding-top-lg">Simple pricing, Amazing experience</h1>
+                        <h2 class="padding-top-sm padding-bottom-md">Choose your desire packages</h2>
+                    </div>
+                    <div class="col-md-3 col-sm-6" ng-repeat="price in vm.prices">
+                        <div class="card" data-wow-delay="{{0.2 + 0.1 * i}}s">
+                            <div class="card-header">
+                                <h4 class="card-section text-center">{{price.name}}</h4>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="padding-top-md"></div>
+                                <div class="price-row" ng-repeat="feature in price.features track by $index">
+                                    {{feature}}
+                                </div>
+                            </div>
+                            <div class="card-footer text-center">
+                                <hr>
+                                <div>
+                                    <h1>{{price.cost}}<sup>
+                                        <small>VND</small>
+                                    </sup></h1>
+                                </div>
+                                <hr>
+                                <div>
+                                    <span class="btn btn-success btn-block text-uppercase" ng-click="vm.selectedPackage = price;">CHOOSE</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid w1280 mobile-full-width">
+                <div class="row-fluid">
+                    <div class="col-md-12 text-center">
+                        <h2 class="padding-top-sm padding-bottom-xs text-thin">Pricing & Services FAQ</h2>
+                    </div>
+                    <div class="clearfix padding-top-md"></div>
+                    <div class="col-md-6">
+                        <h4><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit</strong></h4>
+                        <p>In tempor tortor in condimentum convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><strong>Suspendisse eu turpis maximus.</strong></h4>
+                        <p>Nulla ut iaculis risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis magna est, feugiat sed tortor vulputate, placerat ultricies augue. Nulla placerat iaculis quam a lobortis.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><strong>Vestibulum tempor massa eu quam suscipit.</strong></h4>
+                        <p>Curabitur finibus elit quis erat posuere, non accumsan turpis consectetur.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><strong>Nullam mollis consequat ex eget maximus.</strong></h4>
+                        <p>Proin a tortor metus. Vivamus blandit sem sed erat placerat dignissim. Suspendisse sed efficitur diam, sed aliquet elit. Praesent in ultricies lorem. Donec quis nisl eget dolor pulvinar blandit. Sed pellentesque sem tortor, eget ultricies massa facilisis et.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><strong>Aenean ac enim cursus, tincidunt orci eu, sagittis tortor.</strong></h4>
+                        <p>Proin non orci in metus ullamcorper bibendum. Cras id libero ac est porttitor venenatis ut commodo ex.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><strong>Donec tincidunt dolor.</strong></h4>
+                        <p>Praesent malesuada, ligula at mattis tempus, orci tortor dictum mauris, at volutpat risus orci id massa. Sed purus magna, imperdiet sit amet ullamcorper quis, maximus eu lectus. Phasellus et nunc luctus, facilisis magna eu, elementum ipsum. Sed vitae aliquam neque.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><strong>Suspendisse eu turpis maximus.</strong></h4>
+                        <p>Nulla ut iaculis risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis magna est, feugiat sed tortor vulputate, placerat ultricies augue. Nulla placerat iaculis quam a lobortis.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><strong>Vestibulum tempor massa eu quam suscipit.</strong></h4>
+                        <p>Curabitur finibus elit quis erat posuere, non accumsan turpis consectetur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="vm.selectedPackage">
+            <div class="row">
+                <div class="container-fluid w1280 mobile-full-width">
+                    <div class="row-fluid padding-top-lg">
+                        <div class="col-md-12">
+                            <h2 class="no-padding text-extra-strong">New Couple Page</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row padding-top-lg new-project">
+                <div class="container-fluid w1280 mobile-full-width">
+                    <div class="row-fluid">
+                        <div class="col-sm-6 col-md-6">
+                            <div class="row">
+                                <div class="col-md-12 padding-bottom-sm">
+                                    <strong class="text-muted">Groom</strong>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" required>
+                                        <label>First Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" required>
+                                        <label>Last Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" required>
+                                        <label>Email</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <div class="row">
+                                <div class="col-md-12 padding-bottom-sm">
+                                    <strong class="text-muted">Bride</strong>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" required>
+                                        <label>First Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" required>
+                                        <label>Last Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" required>
+                                        <label>Email</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="row-fluid padding-top-md">
+                        <div class="col-sm-6 col-md-6">
+                            <div class="row">
+                                <div class="col-md-12 padding-bottom-sm">
+                                    <strong class="text-muted">Ceremony Information</strong>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" required>
+                                        <label>Location</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" required>
+                                        <label>Date & Time</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <div class="row">
+                                <div class="col-md-12 padding-bottom-sm">
+                                    <strong class="text-muted">Party Information</strong>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" required>
+                                        <label>Location</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" required>
+                                        <label>Date & Time</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="row-fluid padding-top-md">
+                        <div class="col-sm-6 col-md-6">
+                            <div class="row">
+                                <div class="col-md-12 padding-bottom-sm">
+                                    <strong class="text-muted">Couple Page Information</strong>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" required>
+                                        <label>Page Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" required>
+                                        <label>Story Summary</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <div class="row">
+                                <div class="col-md-12 padding-bottom-sm">
+                                    <strong class="text-muted">&nbsp;</strong>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="4" placeholder="Story"></textarea>
+                                        <!--<label>Location</label>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="row-fluid padding-top-md">
+                        <div class="col-sm-12 col-md-12">
+                            <div class="row">
+                                <div class="col-md-12 padding-bottom-sm">
+                                    <strong class="text-muted">Memorial Photo</strong>
+                                </div>
+                                <div class="col-md-12" style="overflow-x: scroll; width: 100%; white-space: nowrap; ">
+                                    <a class="memory_photo_square"><img src="/images/add.jpg"></a>
+                                    <a class="memory_photo_square"><img src="https://unsplash.it/200/?random=&v=1"></a>
+                                    <a class="memory_photo_square"><img src="https://unsplash.it/200/?random=&v=2"></a>
+                                    <a class="memory_photo_square"><img src="https://unsplash.it/200/?random=&v=3"></a>
+                                    <a class="memory_photo_square"><img src="https://unsplash.it/200/?random=&v=4"></a>
+                                    <a class="memory_photo_square"><img src="https://unsplash.it/200/?random=&v=5"></a>
+                                    <a class="memory_photo_square"><img src="https://unsplash.it/200/?random=&v=6"></a>
+                                    <a class="memory_photo_square"><img src="https://unsplash.it/200/?random=&v=7"></a>
+                                    <a class="memory_photo_square"><img src="https://unsplash.it/200/?random=&v=8"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="row-fluid padding-top-lg">
+                        <div class="col-sm-12 col-md-12">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <a ng-click="vm.submit()" class="btn btn-primary btn-lg">CREATE COUPLE PAGE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+{
+  "name": "HoneyStart Website",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "^1.3.0",
+    "angular-animate": "^1.5.3",
+    "angular-bootstrap": "^1.3.1",
+    "angular-chart.js": "^0.9.0",
+    "angular-cookies": "^1.5.3",
+    "angular-growl": "~0.4.0",
+    "angular-growl-notifications": "^2.3.0",
+    "angular-loading-bar": "^0.9.0",
+    "angular-mocks": "^1.5.3",
+    "angular-progress-button-styles": "^0.1.0",
+    "angular-resource": "^1.5.3",
+    "angular-translate": "^2.11.0",
+    "angular-translate-loader-static-files": "~2.11.0",
+    "angular-translate-loader-url": "~2.11.0",
+    "angular-ui-calendar": "^1.0.1",
+    "angular-ui-router": "^0.2.18",
+    "Angular.uuid2": "angular-uuid2#*",
+    "animate.css": "^3.5.1",
+    "bootstrap": "^3.3.6",
+    "c3-angular": "^1.2.0",
+    "classie": "^1.0.1",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.37",
+    "es5-shim": "^4.5.7",
+    "font-awesome": "^4.5.0",
+    "hover": "^2.0.2",
+    "jquery": "^2.2.3",
+    "json3": "^3.3.2",
+    "lodash": "~3.10.1",
+    "moment": "^2.12.0",
+    "perfect-scrollbar": "^0.6.10",
+    "svg-pan-zoom": "^3.2.6",
+    "textAngular": "^1.5.0",
+    "cropper": "^2.3.0",
+    "angular-breadcrumb": "^0.4.1",
+    "AngularJS-Toaster": "angularjs-toaster#^2.0.0",
+    "angular-sanitize": "^1.5.7",
+    "angular-timer": "^1.3.4",
+    "ladda-angular": "^1.0.1",
+    "wow": "wowjs#^1.1.2",
+    "angular-avatar": "^1.1.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.0"
+  },
+  "resolutions": {
+    "angular": "^1.5.3",
+    "jquery": "^2.2.3"
+  }
+}

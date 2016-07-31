@@ -1,0 +1,51 @@
+<nav id="topnav" class="navbar navbar-with-border" role="navigation" ng-controller="TopNavCtrl as vm"><!--or navbar-fixed-top-->
+    <div class="container-fluid w1440">
+
+        <div class="navbar-header text-center">
+            <a class="navbar-brand visible-xs" ng-click="menuToggle = !menuToggle">
+                <strong class="glyphicon glyphicon-menu-down pull-right ic-logo-menu-down" aria-hidden="true"></strong>
+                <img alt="Brand" src="/images/logo.svg">
+            </a>
+            <a class="navbar-brand hidden-xs" href="/">
+                <img alt="Brand" src="/images/logo.svg" style="margin-top: -5px;">
+            </a>
+        </div>
+
+        <div class="navbar-collapse collapse remove-first-padding" uib-collapse="!menuToggle" style="background-color: white;">
+            <ul class="nav navbar-nav" ng-click="menuToggle = !menuToggle">
+                <li><a href="/">Home</a></li>
+                <li><a href="/project/new">NEW COUPLE PAGE</a></li>
+                <li><a ng-click="vm.showAuthModal(false)">REGISTER | LOGIN</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-collapse hidden-xs">
+            <ul class="nav navbar-nav">
+                <!--<li><a ui-sref="explore">{{'explore' | translate}}</a></li>-->
+                <li><a href="/how_it_works.pdf" target="_blank">How it works?</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><span onclick="window.location.href='/project/new'" class="btn btn-primary text-uppercase">NEW COUPLE PAGE</span></li>
+                <li ng-if="!vm.auth.getUser()"><a ng-click="vm.showAuthModal(true)">REGISTER</a></li>
+                <li ng-if="!vm.auth.getUser()"><a ng-click="vm.showAuthModal(false)">LOGIN</a></li>
+                <li ng-if="vm.auth.getUser()" uib-dropdown>
+                    <a uib-dropdown-toggle>{{vm.auth.getUser().firstName}} {{vm.auth.getUser().lastName}} <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                        <li role="menuitem"><a>PROFILE</a></li>
+                        <li role="menuitem"><a>CONTRIBUTED PROJECT</a></li>
+                        <li class="divider"></li>
+                        <li role="menuitem"><a>LOG OUT</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <form class="navbar-form navbar-left collapse form-horizontal" role="search" uib-collapse="!searchToggle">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+                <input type="submit" class="form-control">
+            </div>
+        </form>
+
+    </div>
+</nav>

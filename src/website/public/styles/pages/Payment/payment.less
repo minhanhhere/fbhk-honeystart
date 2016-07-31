@@ -1,0 +1,162 @@
+.payment-info {
+
+  .form-group {
+    position: relative;
+    border: 1px solid @input-border;
+    border-radius: @input-border-radius;
+
+    label {
+      color: #999;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: @padding-base-horizontal;
+      top: 12px;
+      transition: 0.2s ease all;
+    }
+
+    input {
+
+      &.form-control {
+        box-shadow: none;
+        height: auto;
+        border: none;
+        padding: @padding-base-vertical*2 @padding-base-horizontal;
+      }
+
+      &:focus, &:valid {
+        outline: none;
+        padding-top: @padding-base-vertical*4 - 5;
+        padding-bottom: 3px;
+      }
+
+      &:focus ~ label, &:valid ~ label {
+        top: 5px;
+        font-size: 10px;
+        color: @brand-info;
+      }
+    }
+  }
+
+  .radio {
+    border: 1px solid @input-border;
+    label {
+      width: 100%;
+      padding-top: @padding-base-vertical*2;
+      padding-bottom: @padding-base-vertical*2;
+      padding-left: @padding-base-horizontal*4;
+      padding-right: @padding-base-horizontal;
+    }
+    input[type=radio] {
+      margin-left: -@padding-base-horizontal*2.5;
+    }
+    input[type=text] {
+      border: none;
+      box-shadow: none;
+      height: auto;
+      padding: 0;
+      background: none;
+    }
+    .radio-title {
+      padding-top: @padding-base-vertical*2;
+      padding-bottom: @padding-base-vertical*2;
+    }
+  }
+
+}
+
+.payment-invoice {
+
+  .payment-header {
+    margin: @grid-gutter-width/1.5 0;
+    &.larger {
+      font-size: 17px;
+    }
+  }
+
+  .package-price, .package-name {
+    font-size: 22px;
+    strong {
+      font-weight: 600;
+      color: black;
+    }
+    small {
+      font-size: 55%;
+    }
+  }
+  .package-name {
+    font-size: 18px;
+  }
+  .package-desc {
+    color: black;
+    margin: 5px 0;
+  }
+  .package-addon {
+    color: @gray-lighter-less;
+    font-size: 90%;
+  }
+  .btn-amount {
+    margin-right: 6px;
+    margin-bottom: 5px;
+    width: 111px;
+  }
+}
+
+.payment-success {
+
+  min-height: 93%;
+
+  h4 {
+    line-height: 24px;
+  }
+
+  .ps-icon {
+    font-size: 140px;
+
+    @media (max-width: @screen-xs-min) {
+      font-size: 120px;
+    }
+  }
+
+  .progress-wrapper {
+
+    width: 120px;
+    height: 120px;
+    position: relative;
+    margin: 0 auto;
+
+    [data-loader='circle-side'] {
+      width: 100%;
+      height: 100%;
+      border-width: 3px;
+      border-left-color: @brand-primary;
+    }
+
+    .number-wrapper {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 25px;
+      left: 8px;
+
+      .number-value {
+        font-size: 45px;
+        line-height: 50px;
+      }
+
+      .number-unit {
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: @screen-xs-min) {
+
+      width: 100px;
+      height: 100px;
+
+      .number-wrapper {
+        top: 15px;
+      }
+    }
+  }
+}

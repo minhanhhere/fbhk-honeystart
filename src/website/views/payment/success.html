@@ -1,0 +1,45 @@
+@{title('Process Payment - Honey Start - Funding your Wedding - Improve wedding experience with friends')}
+@{place('controller', 'PaymentSuccessCtrl as vm')}
+
+<script>
+    angular.module('app.payment').factory('$injectedModel', function () {
+        return @{json(model)};
+    });
+</script>
+
+<div class="conter-wrapper home-container payment-success">
+    <div class="container-fluid">
+        <div class="row padding-top-md">
+            <div class="container-fluid w1280 mobile-full-width">
+                <div class="row-fluid">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <div class="progress-wrapper" ng-if="vm.state == vm.LOADING" >
+                            <div data-loader="circle-side"></div>
+                            <div class="number-wrapper text-center">
+                                <!--<div class="number-value text-thin">{{vm.duration}}</div>-->
+                                <div class="number-value text-thin">
+                                    <timer end-time="vm.expired">{{sseconds}}</timer>
+                                </div>
+                                <div class="number-unit text-thin text-uppercase">giây</div>
+                            </div>
+                        </div>
+                        <i ng-if="vm.state == vm.FAIL || vm.state == vm.ERROR" class="fa fa-times-circle ps-icon text-danger" aria-hidden="true"></i>
+                        <i ng-if="vm.state == vm.SUCCESS" class="fa fa-check-circle ps-icon text-success" aria-hidden="true"></i>
+                        <h1><strong>500,000 VND</strong></h1>
+                        <h4 ng-if="vm.state == vm.LOADING" class="text-thin">Chúng tôi đang xử lý giao dịch của bạn. Vui lòng <strong>không</strong> chuyển trang hoặc tắt ứng dụng!</h4>
+                        <h4 ng-if="vm.state == vm.TIMEOUT" class="text-thin">Hết thời gian khi xử lý. Vui lòng <a ng-click="vm.verifyTransaction()">thử lại</a>!</h4>
+                        <h4 ng-if="vm.state == vm.ERROR" class="text-thin">Lỗi khi xử lý giao dịch: {{vm.error}}. <a>Liên hệ để được giúp đỡ!</a></h4>
+                        <h4 ng-if="vm.state == vm.SUCCESS" class="text-thin">Giao dịch thành công.<br/><a>Click vào đây để xem hóa đơn</a></h4>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="row-fluid padding-top-sm padding-bottom-sm">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <h4 class="text-thin">Mã Giao Dịch</h4>
+                        <span class="h4 no-padding text-thin bg-primary">{{vm.backerId}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

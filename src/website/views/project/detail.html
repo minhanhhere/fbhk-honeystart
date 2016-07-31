@@ -1,0 +1,55 @@
+@{title(model.name + ' - Funding your Wedding - Improve wedding experience with friends')}
+@{place('controller', 'ProjectCtrl as vm')}
+
+@{section facebook_meta}
+<meta property="og:title" content="@{model.name} - Funding your Wedding - Improve wedding experience with friends"/>
+<meta property="og:image" content="@{model.avatar}"/>
+<meta property="og:url" content="http://honeystart.com/project/@{model.id}"/>
+@{end}
+
+<script>
+    angular.module('app.project').factory('$injectedModel', function () {
+        return @{json(model)};
+    });
+</script>
+
+<div class="conter-wrapper home-container">
+    <div class="container-fluid">
+        <div class="row" ng-include="'/scripts/Project/project-header.html'"></div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="projectbody-horizontal">
+                <div class="container-fluid w1280 mobile-full-width">
+                    <div class="row-fluid">
+                        <div class="col-md-8 col-sm-8">
+                            <div class="page-header">
+                                <ul class='nav nav-tabs'>
+                                    <li role="presentation" ng-class="{ active: vm.activeTab == 0 }">
+                                        <a class="page-header-title adjust-text" data-toggle="tab" ng-click="vm.setActiveTab(0)">STORY</a>
+                                    </li>
+                                    <li role="presentation" ng-class="{ active: vm.activeTab == 1 }">
+                                        <a class="page-header-title adjust-text" data-toggle="tab" ng-click="vm.setActiveTab(1)">THANKYOU GIFTS</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="projectbody-content">
+                                <div ng-class="{hidden: vm.activeTab != 0}" ng-include="vm.template.left"></div>
+                                <div class="project-update" ng-class="{hidden: vm.activeTab != 1}">
+                                    @{view('~/project/packages')}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="page-header">
+                                <ul class='nav nav-tabs'>
+                                    <li role="presentation"><a class="page-header-title adjust-text" data-toggle="tab">COMMENTS</a></li>
+                                </ul>
+                            </div>
+                            <div class="fb-comments" data-href="http://localhost:8000/project/@{model.id}" data-numposts="10" data-width="100%" data-order-by="reverse_time"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

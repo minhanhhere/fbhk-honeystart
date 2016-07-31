@@ -1,0 +1,16 @@
+<div class="project-update-post" ng-repeat="update in vm.project.updates">
+    <h3 class="project-update-post-title text-extra-strong">{{vm.fromNow(update.createdAt)}}</h3>
+    <div class="project-update-post-content" ng-bind-html="update.content"></div>
+    <div class="project-update-post-author media">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object img-avatar img-circle" ng-src="{{update.owner.avatar}}" alt="">
+            </a>
+        </div>
+        <div class="media-body">
+            <div class="project-update-post-author-name">
+                <strong class="text-nowrap text-primary">{{update.owner.firstName + '  '+ update.owner.lastName}}</strong>
+            </div>
+        </div>
+    </div>
+</div>

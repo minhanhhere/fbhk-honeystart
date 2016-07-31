@@ -1,0 +1,27 @@
+.mixin_adjust_text(@hclass, @size) {
+  @hclassName: e(@hclass);
+  @{hclassName}.adjust-text {
+    font-size: floor(0.7 * @size);
+    @media (min-width: @screen-sm-min) {
+      font-size: ceil(0.75 * @size);
+    }
+    @media (min-width: @screen-md-min) {
+      font-size: ceil(0.9 * @size);
+    }
+    @media (min-width: @screen-lg-min) {
+      font-size: @size;
+    }
+  }
+  @{hclassName}.adjust-text-smaller {
+    font-size: floor(0.6 * @size);
+    @media (min-width: @screen-sm-min) {
+      font-size: ceil(0.6 * @size);
+    }
+    @media (min-width: @screen-md-min) {
+      font-size: ceil(0.75 * @size);
+    }
+    @media (min-width: @screen-lg-min) {
+      font-size: @size;
+    }
+  }
+}

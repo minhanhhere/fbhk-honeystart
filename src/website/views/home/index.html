@@ -1,0 +1,122 @@
+@{title('Honey Start - Funding your Wedding - Improve wedding experience with friends')}
+@{place('controller', 'HomeCtrl as vm')}
+
+@{section facebook_meta}
+<meta property="og:title" content="Honey Start - Funding your Wedding - Improve wedding experience with friends"/>
+<meta property="og:image" content="http://honeystart.com/images/slider/1.jpg"/>
+<meta property="og:url" content="http://honeystart.com"/>
+@{end}
+
+@{view('~/home/home-slider')}
+<div class="conter-wrapper home-container">
+    <div class="container-fluid">
+        <div class="row padding-bottom-lg">
+            <div class="container-fluid w1280 mobile-full-width">
+                <div class="row-fluid">
+                    <div class="col-md-12">
+                        <h4 class="padding-top-sm padding-bottom-xs text-uppercase">
+                            <strong>RECENT LOVE STORIES</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6" ng-repeat="project in vm.projects">
+                        <div class="card feature-project animated wow zoomIn" data-wow-delay="{{0.2 + 0.1 * i}}s">
+                            <div class="card-header">
+                                <a href="/project/{{project.id}}"><img class="img-responsive-full-width" ng-src="{{project.avatar}}"></a>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="fp-name"><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+                                <h5 class="fp-subtitle text-info">
+                                    {{project.groom ? project.groom.lastName + ' ' + project.groom.firstName : 'Groom'}}
+                                    -
+                                    {{project.bride ? project.bride.lastName + ' ' + project.bride.firstName : 'Bride'}}
+                                </h5>
+                                <p class="fp-desc">{{project.summary}}</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="/project/{{project.id}}" class="btn btn-primary btn-block text-uppercase">CONTRIBUTE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row padding-top-lg padding-bottom-lg" style="background-color: #f5f5f5;">
+            @{view('~/home/home-about')}
+        </div>
+        <div class="clearfix"></div>
+        <div class="row padding-top-xxl padding-bottom-xxl">
+            <div class="container-fluid w1280 mobile-full-width">
+                <div class="row-fluid text-center">
+                    <div class="col-md-12 text-center animated wow zoomIn padding-bottom-md">
+                        <div style="font-size: 30px;"><strong>GETTING MARRIED? JOIN US NOW</strong></div>
+                        <hr class="small"/>
+                        <div style="font-size: 16px;">To enjoy a brand new wedding experience for you & your wedding guests.</div>
+                    </div>
+                    <div class="col-sm-12 text-center animated wow fadeInDownSmall">
+                        <a href="/how_it_works.pdf" target="_blank" class="btn btn-primary btn-lg btn-outline">HOW IT WORKS</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="/project/new" class="btn btn-primary btn-lg">CREATE YOUR COUPLE PAGE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="padding-bottom-lg">
+            <div class="container-fluid w1280 mobile-full-width">
+                <div class="row-fluid text-center">
+                    <div class="col-md-12 text-center animated wow zoomIn padding-bottom-md">
+                        <div style="font-size: 30px;"><strong>RECOMMENDED SERVICES</strong></div>
+                    </div>
+                    <div class="col-sm-12 text-center">
+                        <img src="/images/services.jpg" class="img-responsive-full-width">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="row padding-top-lg" style="background-color: #f5f5f5;">
+            <div class="container-fluid w1280 mobile-full-width">
+                <div class="row-fluid">
+                    <div class="col-md-4 col-sm-6">
+                        <img class="hidden-xs img-responsive-full-height" src="/images/support-girl.png">
+                        <img class="visible-xs img-responsive-full-width" src="/images/support-girl.png">
+                    </div>
+                    <div class="col-md-8 col-sm-6 padding-top-sm padding-bottom-sm">
+                        <div style="font-size: 22px;"><strong>CONTACT US</strong></div>
+                        <div class="row padding-top-sm">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" required placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" required placeholder="Fullname">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" required placeholder="Subject">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea class="text-area form-control" rows="4" required placeholder="Content"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group pull-right">
+                                    <a class="btn btn-primary btn-lg">SEND EMAIL</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
