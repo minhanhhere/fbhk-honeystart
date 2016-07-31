@@ -22,7 +22,7 @@
         };
 
         vm.continue = function() {
-
+			window.location.href = '/payment/new/' + vm.projectId + '?package_id=' + vm.packages[0].id;
         };
     }
 
